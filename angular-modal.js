@@ -3,17 +3,12 @@
 
     angular
         .module('ngModal', [])
-        .controller('ModalController', ['$scope', function($scope) {
-
-        }])
         .factory('$modal', [
             '$q',
             '$templateCache',
             '$templateRequest',
             '$compile',
-            '$rootScope',
-            '$controller',
-            function($q, $templateCache, $templateRequest, $compile, $rootScope, $controller) {
+            function($q, $templateCache, $templateRequest, $compile) {
 
                 var defer;
 
@@ -76,35 +71,20 @@
                      */
                     function compileTemplate(template) {
 
-                        var scope = $rootScope.$new();
+                        var scope = config.scope;
                         var linkFn = $compile(template);
                         var id = generateRandomId();
                         var modalElement = linkFn(scope);
                         modalElement[0].id = id;
-                        var ctrl = 'data-ng-controller';
                         scope.close = function() {
 
-                            if (!config.appendElement) {
-
-                                angular.element(document).find(config.id).remove();
-                            } else {
-
-                                var el = document.getElementById(config.id);
-                                el.parentNode.removeChild(el);
-                            }
-                            scope.$destroy();
-                            scope = null;
+                            var el = document.getElementById(config.id);
+                            el.parentNode.removeChild(el);
                         };
 
-                        var myScope = $controller('ModalController', {
-                            $scope: scope
-                        });
-                        angular.merge(modalElement[0], {
-                            "data-ng-controller": 'ModalController'
-                        });
                         config.id = id;
 
-                        addModalToDom(modalElement);
+                        addModalToDom(modalElement, scope);
                     }
 
                     /**
@@ -112,7 +92,7 @@
                      * @param - {Object}
                      * @return - {Object}
                      */
-                    function addModalToDom(modalElement) {
+                    function addModalToDom(modalElement, scope) {
 
                         if (config.appendElement) {
 
@@ -121,7 +101,7 @@
 
                             angular.element(document.body).append(modalElement);
                         }
-                        config.scope = modalElement.scope();
+                        config.scope = scope;
                         defer.resolve(config);
                     }
 
