@@ -22,7 +22,7 @@ angular
 				});
 			};
 
-			/*$scope.getBadge = function(value) {
+			$scope.getBadge = function(value) {
 
 				if(value === true) {
 
@@ -31,7 +31,7 @@ angular
 
 					return "alert-danger";
 				}
-			}; */
+			}; 
 
 			function successCallback(data) {
 
