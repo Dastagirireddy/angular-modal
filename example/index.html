@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular modal API demo</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body ng-cloak class="ng-cloak">
+	<div class="container" ng-controller="ModalAPIController" id="container">
+		<h1 class="text-center page-header">Contacts list App</h1>
+		<table class="table table-striped">
+		  <thead>
+		  	<th>S.NO</th>
+		  	<th>NAME</th>
+		  	<th>URL</th>
+		  	<th>SITE ADMIN</th>
+		  </thead>
+		  <tbody>
+		  	<tr ng-repeat="git in gits" ng-click="showPopup($index)">
+		  		<td>{{ $index + 1 }}</td>
+		  		<td>{{ git.login | uppercase }}</td>
+		  		<td>{{ git.url }}</td>
+		  		<td><span class="alert alert-custom" ng-class="getBadge(git.site_admin)">{{ git.site_admin }}</span></td>
+		  	</tr>
+		  </tbody>
+		</table>
+	</div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+<script type="text/javascript" src="angular-rest.min.js"></script>
+<script type="text/javascript" src="angular-modal.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</html>

@@ -1,0 +1,124 @@
+.table tr:hover {
+	cursor: pointer;
+}
+
+.modal {
+	display: block;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.type-hint {
+	background-color: rgba(0,0,0,0.15);
+	padding: 2px 7px;
+	border-radius: 3px;
+	border 1px solid black;
+}
+
+.alert-custom {
+	margin-bottom: 0;
+	padding: 2px 6px;
+	border-radius: 2px;
+}
+
+.modal-body-custom {
+	height: 300px;
+	overflow-y: auto;
+	padding: 0;
+}
+
+.avatar {
+	height: 30px;
+	width: 30px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+
+/** sidebar **/
+/* Fonts */
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), local('Lora-Regular'), url(../fonts/GsNxiN0oIzsS201cnUag6w.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), local('Lora-Regular'), url(../fonts/v9/I0dEfRgGNE90_hXZq7bjyw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), local('Lora-Regular'), url(../fonts/4vqKRIwnQQGUQQh-PnvdMA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), local('Lora-Italic'), url(../fonts/OVZcBeQFqX1w7YhsLFAXp_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), local('Lora-Italic'), url(../fonts/nRWuMjV9d7Qv7608EovOgfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), local('Lora-Italic'), url(../fonts/_RSiB1sBuflZfa9fxV8cOg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+  /* Scroll Bar */
+::-webkit-scrollbar-track {
+  background-color: rgba(50,50,50,.2);
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(50,50,50,.3);
+}
+
+/* Page loading overlay */
+.page-loading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-color: rgba(128, 128,128, 0.5);*/
+	background-color: rgba(0,0,0,.45);
+	z-index: 1600;
+}
+.page-loader{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 2em;
+	color: red;
+}
+
+.page-loader img{
+	transform: translate(-50%, -50%);
+}
+
+.overlay-deactive{
+	display: none;
+}
